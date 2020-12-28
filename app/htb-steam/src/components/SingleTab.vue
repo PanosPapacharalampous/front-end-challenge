@@ -1,7 +1,7 @@
 <template>
-    <div class="tab tab_filler active">
-        <div class="tab_content active">
-            New and Trending
+    <div class="tab tab_filler" :class="[index == activeTab ? 'active' : '']">
+        <div class="tab_content" :class="[index == activeTab ? 'active' : '']">
+            {{this.title}}
         </div>
     </div>
 </template>
@@ -12,7 +12,14 @@ export default {
     return {
      
     }
+  },
+  props:{
+      title:String,
+      activeTab:Number,
+      index:String
   }
+
+  
 }
 </script>
 
