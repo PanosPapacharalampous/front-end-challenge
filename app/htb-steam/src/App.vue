@@ -3,6 +3,7 @@
     <div class="Hwrapper">
       <b-container class="Hcontainer">
        <tabs-bar></tabs-bar>
+       <content-tab></content-tab>
       </b-container>
     </div>
   </div>
@@ -11,6 +12,7 @@
 
 <script>
 import TabsBar from './components/TabsBar.vue';
+import ContentTab from './components/TabContent.vue';
 
 export default {
   data () {
@@ -20,6 +22,7 @@ export default {
   },
   components:{
     TabsBar:TabsBar,
+    ContentTab:ContentTab
   }
 }
 </script>
@@ -28,15 +31,22 @@ export default {
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
+body{
+ font-family: Arial, Helvetica, sans-serif;
+}
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}
 .Hwrapper{
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     background: #1b2838;
+    min-height: 100vh;
 }
 .Hcontainer{
-  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 </style>

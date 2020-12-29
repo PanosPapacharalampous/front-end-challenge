@@ -18,7 +18,7 @@ import SingleTab from './SingleTab.vue';
 export default {
   data () {
     return {
-     activeTab: 1
+     activeTab: this.$store.getters.getActiveTab
     }
   },
   components:{
@@ -27,8 +27,10 @@ export default {
   methods:{
    
   },
-  computed:{
-
+  watch:{
+    activeTab:function(){
+      this.$store.dispatch('changeTab',this.activeTab)
+    }
   }
 }
 </script>

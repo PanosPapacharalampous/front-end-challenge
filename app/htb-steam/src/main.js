@@ -2,12 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-
+import Game from './Gamepage.vue'
+import { store } from './store/store';
 
 const router = new VueRouter({
   mode: 'history',
   routes: [
     { path:'/', component: App },
+    { path:'/game/:id', component:Game, name: 'game'}
   ]
 });
 
@@ -17,7 +19,8 @@ Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 
 new Vue({
-  router,
   el: '#app',
+  router,
+  store,
   render: h => h(App)
 })
