@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <div class="Hwrapper">
-      <b-container class="Hcontainer">
        <router-view></router-view>
-      </b-container>
     </div>
   </div>
 </template>
