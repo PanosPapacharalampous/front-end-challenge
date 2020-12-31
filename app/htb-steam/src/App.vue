@@ -25,6 +25,9 @@ export default {
 body{
  font-family: Arial, Helvetica, sans-serif;
 }
+.pt30{
+  padding-top: 30px;
+}
 a{
   &:hover{
     text-decoration: none;
