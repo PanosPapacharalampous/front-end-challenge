@@ -1,6 +1,6 @@
 <template>
   <div class="linksWrapper">
-    <router-link v-for="(value,index) in results.slice(0,10)" :key="index" :to="{name:'game', params:{id:value._id}}" class="tab_item">
+    <router-link v-for="(value,index) in results.slice(0,10)" :key="index" :to="{name:'game', params:{id:value.appid}}" class="tab_item">
       <div class="tab_item_cap">
         <img class="tab_item_cap_img" :src="value.header_image">
       </div>
