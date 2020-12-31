@@ -1,14 +1,14 @@
 <template>
-    <div class="tabbar_ctn">
-        <div class="store_horizontal_minislider_ctn">
-            <div class="tabbar store_horizontal_minislider">
-                <single-tab @click.native="activeTab=1" title="New and Trending" :activeTab="activeTab" index="1"></single-tab>
-                <single-tab @click.native="activeTab=2" title="Top Sellers" :activeTab="activeTab" index="2"></single-tab>
-                <single-tab @click.native="activeTab=3" title="What's Being Played" :activeTab="activeTab" index="3"></single-tab>
-                <single-tab @click.native="activeTab=4" title="Upcoming" :activeTab="activeTab" index="4"></single-tab>
-            </div>
-        </div>
+  <div class="tabbar_ctn">
+    <div class="store_horizontal_minislider_ctn">
+      <div class="tabbar store_horizontal_minislider">
+          <single-tab @click.native="activeTab=1" title="New and Trending" :activeTab="activeTab" index="1"></single-tab>
+          <single-tab @click.native="activeTab=2" title="Top Sellers" :activeTab="activeTab" index="2"></single-tab>
+          <single-tab @click.native="activeTab=3" title="What's Being Played" :activeTab="activeTab" index="3"></single-tab>
+          <single-tab @click.native="activeTab=4" title="Upcoming" :activeTab="activeTab" index="4"></single-tab>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -39,16 +39,16 @@ export default {
 .tabbar_ctn{
   box-shadow: 0 5px 0 -1px #214b6b;
   margin-bottom: 9px;
-    .store_horizontal_minislider_ctn{
-        height: 30px !important;
-        position: relative;
-        overflow: hidden;
-        .tabbar.store_horizontal_minislider{
-            white-space: nowrap;
-            overflow-x: auto;
-            overflow-y: hidden;
-        }
-    }
+  .store_horizontal_minislider_ctn{
+      height: 30px !important;
+      position: relative;
+      overflow: hidden;
+      .tabbar.store_horizontal_minislider{
+          white-space: nowrap;
+          overflow-x: auto;
+          overflow-y: hidden;
+      }
+  }
 }
 
 </style>

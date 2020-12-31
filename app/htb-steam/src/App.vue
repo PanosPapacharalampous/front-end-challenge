@@ -2,8 +2,7 @@
   <div id="app">
     <div class="Hwrapper">
       <b-container class="Hcontainer">
-       <tabs-bar></tabs-bar>
-       <content-tab></content-tab>
+       <router-view></router-view>
       </b-container>
     </div>
   </div>
@@ -11,18 +10,12 @@
 
 
 <script>
-import TabsBar from './components/TabsBar.vue';
-import ContentTab from './components/TabContent.vue';
 
 export default {
   data () {
     return {
      
     }
-  },
-  components:{
-    TabsBar:TabsBar,
-    ContentTab:ContentTab
   }
 }
 </script>

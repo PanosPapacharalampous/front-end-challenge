@@ -46,7 +46,6 @@ export default {
   mounted(){
     axios.get(`https://htb-steam-api.vercel.app/api/apps?tab=new_and_trending`)
     .then(response => {
-      console.log
       this.trending = response.data;
     })
     .catch(e => {
