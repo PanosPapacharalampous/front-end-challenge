@@ -1,5 +1,6 @@
 <template>
   <div class="backgroundGameImage" :style="{'background-image':'url('+ imageBackgroundUrl+')'}" >
+    <div class="backToHome" @click="returnHome"><b-icon-arrow-left-circle-fill></b-icon-arrow-left-circle-fill></div>
     <div class="gameBackgroundGlow">
       <b-container class="Hcontainer">
         <b-row>
@@ -55,7 +56,7 @@ export default {
       imageBackgroundUrl:'',
       shortDes:'',
       headerImg:'',
-      releaseD:[],
+      releaseD:{},
       devs:[],
       publishers:[]
     }
@@ -86,6 +87,11 @@ export default {
     Slider:Slider,
     PriceBanner:PriceBanner,
     ShortDescription:ShortDescription
+  },
+  methods:{
+    returnHome(){
+      this.$router.push({name:'home'})
+    }
   }
 }
 </script>
@@ -93,6 +99,19 @@ export default {
 <style lang="scss" scoped>
 .rightCol{
   padding-left: 0px;
+}
+.backToHome{
+  margin-left: 50px;
+  padding-top: 30px;
+  width: fit-content;
+  svg{
+    font-size: 33px;
+    color: white;
+    cursor: pointer;
+    &:hover{
+      color:#53a1df!important;
+    }
+  }
 }
 .apphub_AppName{
   font-family: "Motiva Sans", Sans-serif;
@@ -108,7 +127,7 @@ export default {
   background-position: center top;
   background-repeat: no-repeat;
   min-width: 972px;
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   width: 100%;

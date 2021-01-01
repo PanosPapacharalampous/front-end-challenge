@@ -38,7 +38,7 @@ export default {
   props:{
     shortDes:String,
     headerImg:String,
-    releaseD:Array,
+    releaseD:Object,
     devs:Array,
     publishers:Array
   },
