@@ -14,12 +14,14 @@
       <div class="dev_row">
         <div class="subtitle column">Developer:</div>
         <div class="summary column">
-          <a href="https://store.steampowered.com/developer/ConcernedApe?snr=1_5_9__2000">ConcernedApe</a>									</div>
+          <a href="https://store.steampowered.com/developer/ConcernedApe?snr=1_5_9__2000">ConcernedApe</a>
+        </div>
       </div>
       <div class="dev_row">
         <div class="subtitle column">Publisher:</div>
         <div class="summary column">
-        <a href="https://store.steampowered.com/publisher/ConcernedApe?snr=1_5_9__2000">ConcernedApe</a>										</div>
+          <a href="https://store.steampowered.com/publisher/ConcernedApe?snr=1_5_9__2000">ConcernedApe</a>
+        </div>
       </div>																
     </div>
   </div>
@@ -32,6 +34,13 @@ export default {
     return {
      
     }
+  },
+  props:{
+    shortDes:String,
+    headerImg:String,
+    releaseD:Array,
+    devs:Array,
+    publishers:Array
   },
   mounted() {
 

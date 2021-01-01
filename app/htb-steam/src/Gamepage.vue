@@ -9,10 +9,22 @@
         </b-row>
         <b-row>
           <b-col cols xs="12"  sm="12" md="12" lg="8">
-            <slider :info="gameInfo" :movies="movies"></slider>
+            <slider
+             :info="gameInfo"
+             :movies="movies"
+             :slidesImg="slidesImg"
+             >
+            </slider>
           </b-col>
           <b-col cols xs="12" sm="12" md="12" lg="4" class="rightCol">
-           <short-description></short-description>
+            <short-description
+             :shortDes="shortDes"
+             :headerImg="headerImg"
+             :releaseD="releaseD"
+             :devs="devs"
+             :publishers="publishers"
+             >
+            </short-description>
           </b-col>
         </b-row>
       </b-container>
@@ -32,13 +44,20 @@ import Slider from './components/Slider.vue'
 import PriceBanner from './components/GamePrice.vue'
 import ShortDescription from './components/ShortDescription.vue'
 import axios from 'axios';
+
 export default {
 
   data() {
     return {
       gameInfo:[],
       movies:[],
-      imageBackgroundUrl:'https://cdn.cloudflare.steamstatic.com/steam/apps/413150/page_bg_generated_v6b.jpg?t=1608624324'
+      slidesImg:[],
+      imageBackgroundUrl:'',
+      shortDes:'',
+      headerImg:'',
+      releaseD:[],
+      devs:[],
+      publishers:[]
     }
   },
   mounted() {
@@ -46,14 +65,22 @@ export default {
     .then(response => {
       this.gameInfo = response.data;
       if(response.data[0].movies.length > 0){
-        this.movies=response.data[0].movies;
+        this.movies = response.data[0].movies;
       }
+      if(response.data[0].screenshots.length > 0){
+        this.slidesImg = response.data[0].screenshots;
+      }
+      this.imageBackgroundUrl=response.data[0].background;
+      this.shortDes = response.data[0].short_description;
+      this.headerImg = response.data[0].header_image;
+      this.releaseD = response.data[0].release_date;
+      this.devs = response.data[0].developers;
+      this.publishers = response.data[0].publishers;
+
     })
     .catch(e => {
-      this.errors.push(e)
+      console.log(e); 
     });
-  },
-  methods:{
   },
   components:{
     Slider:Slider,
