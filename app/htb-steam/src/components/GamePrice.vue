@@ -9,17 +9,18 @@
 				<input type="hidden" name="subid" value="401467">
 			</form>
 			<div class="game_area_purchase_platform">
-				<span class="platform_img win"></span>
+				<span v-if="platforms.windows" class="platform_img win"></span>
+        <span v-if="platforms.mac" class="platform_img mac"></span>
+        <span v-if="platforms.linux" class="platform_img linux"></span>
 			</div>
-			<h1>Buy Sea of Thieves</h1>
-			<p class="game_purchase_discount_countdown">SPECIAL PROMOTION! Offer ends 5 January</p>								
-			<div class="game_purchase_action">
+			<h1>{{title}}</h1>
+			<div v-if="priceObj" class="game_purchase_action">
 				<div class="game_purchase_action_bg">
 					<div class="discount_block game_purchase_discount">
-						<div class="discount_pct">-50%</div>
-						<div class="discount_prices">
-							<div class="discount_original_price">39,99€</div>
-							<div class="discount_final_price">19,99€</div>
+						<div v-if="priceObj.discount_percent && priceObj.discount_percent > 0" class="discount_pct">-{{priceObj.discount_percent}}%</div>
+						<div class="discount_prices" :class="[priceObj.final_formatted && !priceObj.initial_formatted ? 'noDiscount' : '']">
+							<div v-if="priceObj.initial_formatted" class="discount_original_price">{{priceObj.initial_formatted}}</div>
+							<div v-if="priceObj.final_formatted" class="discount_final_price">{{priceObj.final_formatted}}</div>
 						</div>
 					</div>
 					<div class="btn_addtocart">
@@ -40,6 +41,11 @@ export default {
     return {
       
     }
+  },
+  props:{
+    priceObj:Object,
+    title:String,
+    platforms:Object
   },
   mounted() {
 
@@ -164,6 +170,20 @@ export default {
               padding-right: 6px;
               font-size: 14px;
               color: #acdbf5;
+              &.nopadds{
+                padding-top: 7px;
+              }
+            }
+            &.noDiscount{
+              display: flex;
+              height: 100%;
+              .discount_final_price{
+                padding-top: 0px;
+                padding-bottom: 0px;
+                display: flex;
+                height: 100%;
+                align-items: center;
+              }
             }
           }
         }

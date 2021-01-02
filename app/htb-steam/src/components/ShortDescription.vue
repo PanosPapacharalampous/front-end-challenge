@@ -1,26 +1,25 @@
 <template>
   <div>
     <div class="game_header_image_ctn">
-      <img class="game_header_image_full" src="https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg?t=1608624324">
+      <img class="game_header_image_full" :src="headerImg">
     </div>
-    <div class="game_description_snippet">
-      You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?
-    </div>
+    <div class="game_description_snippet" v-html="shortDes"></div>
     <div class="user_reviews">
       <div class="release_date">
         <div class="subtitle column">Release Date:</div>
-        <div class="date">26 Feb, 2016</div>
+        <div v-if="releaseD.coming_soon" class="date">Coming soon</div>
+        <div v-else class="date">{{releaseD.date}}</div>
       </div>
       <div class="dev_row">
         <div class="subtitle column">Developer:</div>
         <div class="summary column">
-          <a href="https://store.steampowered.com/developer/ConcernedApe?snr=1_5_9__2000">ConcernedApe</a>
+          <span v-for="(value,index) in devs" :key="`dev-${index}`">{{getValWithComma(value,index)}}</span>
         </div>
       </div>
       <div class="dev_row">
         <div class="subtitle column">Publisher:</div>
         <div class="summary column">
-          <a href="https://store.steampowered.com/publisher/ConcernedApe?snr=1_5_9__2000">ConcernedApe</a>
+          <span v-for="(value,index) in publishers" :key="`dev-${index}`">{{getValWithComma(value,index)}}</span>
         </div>
       </div>																
     </div>
@@ -43,9 +42,16 @@ export default {
     publishers:Array
   },
   mounted() {
-
+    
   },
   methods:{
+    getValWithComma(dev,index){
+      if(index === 0){
+        return `${dev}`
+      }else{
+        return `, ${dev}`
+      }
+    }
   },
   components:{
   
@@ -56,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 .game_header_image_ctn{
   margin-bottom: 7px;
-  height: 151px;
+  height: auto;
   .game_header_image_full{
     width: 100%;
     height: 100%;
@@ -76,13 +82,11 @@ export default {
 }
 .user_reviews{
   font-size: 12px;
-  color: #556772;
+  color: #c6d4df;
   margin-top: 10px;
   .release_date{
     display: flex;
     line-height: 16px;
-    padding-top: 9px;
-    padding-bottom: 13px;
     .date{
       color: #8f98a0;
     }
@@ -103,6 +107,9 @@ export default {
     display: flex;
     line-height: 16px;
     .summary{
+      span{
+        color:#8f98a0;
+      }
       a{
         color: #67c1f5;
         &:hover{

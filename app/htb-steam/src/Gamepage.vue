@@ -26,25 +26,41 @@
              :publishers="publishers"
              >
             </short-description>
+            <collapsable-cat :categories="categories"></collapsable-cat>
           </b-col>
         </b-row>
       </b-container>
     </div>
     <b-container class="pt30">
       <b-row>
-        <b-col cols xs="12" sm="12" md="12" lg="8">
-          <price-banner></price-banner>
+        <b-col cols xs="12" sm="12" md="12" lg="12">
+          <price-banner 
+           :priceObj="priceObj"
+           :title="title"
+           :platforms="platforms"
+           >
+         </price-banner>
         </b-col>
       </b-row>
-    </b-container>  
+    </b-container>
+    <b-container class="pt30">
+      <b-row>
+        <b-col cols xs="12" sm="12" md="12" lg="12">
+          <about-game :aboutGame="aboutGame"></about-game>
+        </b-col>
+      </b-row>
+    </b-container>    
   </div>
 </template>
 
 <script>
-import Slider from './components/Slider.vue'
-import PriceBanner from './components/GamePrice.vue'
-import ShortDescription from './components/ShortDescription.vue'
+import Slider from './components/Slider.vue';
+import PriceBanner from './components/GamePrice.vue';
+import ShortDescription from './components/ShortDescription.vue';
+import CollapsableCat from './components/CollapsableCat.vue';
+import AboutGame from './components/AboutGame.vue';
 import axios from 'axios';
+
 
 export default {
 
@@ -58,7 +74,12 @@ export default {
       headerImg:'',
       releaseD:{},
       devs:[],
-      publishers:[]
+      publishers:[],
+      priceObj:{},
+      title:'',
+      platforms:{},
+      categories:[],
+      aboutGame:'',
     }
   },
   mounted() {
@@ -77,7 +98,11 @@ export default {
       this.releaseD = response.data[0].release_date;
       this.devs = response.data[0].developers;
       this.publishers = response.data[0].publishers;
-
+      this.priceObj = response.data[0].price_overview;
+      this.title = response.data[0].name;
+      this.platforms = response.data[0].platforms;
+      this.categories = response.data[0].categories;
+      this.aboutGame = response.data[0].about_the_game;
     })
     .catch(e => {
       console.log(e); 
@@ -86,7 +111,9 @@ export default {
   components:{
     Slider:Slider,
     PriceBanner:PriceBanner,
-    ShortDescription:ShortDescription
+    ShortDescription:ShortDescription,
+    CollapsableCat,
+    AboutGame
   },
   methods:{
     returnHome(){
