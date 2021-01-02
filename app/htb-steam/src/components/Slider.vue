@@ -68,6 +68,7 @@
 
 <style lang="scss" scoped>
 @import '../global/variables.scss';
+@import '../global/mixins.scss';
 
   .thumb-example{
     display: block;
@@ -95,6 +96,9 @@
       }
       &.gallery-top {
         width: 100%;
+        @include respond-to($small){
+          height: auto;
+        }
       }
       &.gallery-thumbs {
         height: 77px;

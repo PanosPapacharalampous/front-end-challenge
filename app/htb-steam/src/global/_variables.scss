@@ -41,3 +41,14 @@ $cardlinearB: linear-gradient(to bottom, #6fa720 5%, #588a1b 95%);
 $cardLinearR: linear-gradient(to right, #75b022 5%, #588a1b 95%);
 $lightBlueBack: rgba(0, 0, 0, 0.3);
 $blackithOp: rgba(0, 0, 0, 0.25);
+
+// Devices
+$xsmall: "(max-width: 480px)";
+$small-xsmall: "(min-width: 480px) and (max-width: 768px)";
+$small: "(max-width: 768px)";
+$medium-small: "(min-width: 768px) and (max-width: 992px)";
+$medium: "(max-width: 991px)";
+$large-medium: "(min-width: 992px) and (max-width: 1200px)";
+$large: "(max-width: 1200px)";
+$xlarge-large: "(min-width: 1200px) and (max-width: 1400px)";
+$xlarge: "(max-width: 1400px)";

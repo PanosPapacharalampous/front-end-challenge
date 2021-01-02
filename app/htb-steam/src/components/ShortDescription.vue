@@ -61,6 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../global/variables.scss';
+@import '../global/mixins.scss';
 
 .game_header_image_ctn{
   margin-bottom: 7px;

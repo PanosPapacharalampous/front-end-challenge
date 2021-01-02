@@ -3,7 +3,7 @@
     <div class="backToHome" @click="returnHome"><b-icon-arrow-left-circle-fill></b-icon-arrow-left-circle-fill></div>
     <div class="gameBackgroundGlow">
       <b-container class="Hcontainer">
-        <b-row>
+        <b-row class="firstColRow">
           <b-col cols="12">
              <div class="apphub_AppName" v-for="(title,index) in gameInfo" :key="index">{{title.name}}</div> 
           </b-col>
@@ -125,14 +125,23 @@ export default {
 
 <style lang="scss" scoped>
 @import './global/variables.scss';
+@import './global/mixins.scss';
 
 .rightCol{
   padding-left: 0px;
+  @include respond-to($medium){
+    padding-left: 15px;
+    margin-top: 20px;
+  }
 }
+
 .backToHome{
   margin-left: 50px;
   padding-top: 30px;
   width: fit-content;
+  @include respond-to($small){
+    margin-left: 15px;
+  }
   svg{
     font-size: 33px;
     color: $white;
@@ -155,7 +164,6 @@ export default {
 .backgroundGameImage{
   background-position: center top;
   background-repeat: no-repeat;
-  min-width: 972px;
   position: relative;
   left: 0;
   top: 0;

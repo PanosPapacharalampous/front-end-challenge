@@ -1,0 +1,6 @@
+// Responsive Media Queries
+@mixin respond-to($media) {
+  @media only screen and #{$media} {
+    @content;
+  }
+}
