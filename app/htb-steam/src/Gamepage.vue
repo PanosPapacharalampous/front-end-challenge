@@ -124,6 +124,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import './global/variables.scss';
+
 .rightCol{
   padding-left: 0px;
 }
@@ -133,10 +135,10 @@ export default {
   width: fit-content;
   svg{
     font-size: 33px;
-    color: white;
+    color: $white;
     cursor: pointer;
     &:hover{
-      color:#53a1df!important;
+      color:$blueGame!important;
     }
   }
 }
@@ -147,7 +149,7 @@ export default {
   font-size: 26px;
   line-height: 32px;
   text-overflow: ellipsis;
-  color: white;
+  color: $white;
   padding-bottom: 15px;
 }
 .backgroundGameImage{

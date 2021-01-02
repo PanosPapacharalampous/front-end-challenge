@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../global/variables.scss';
 
     .tab.tab_filler{
         display: inline-block;
@@ -42,7 +43,7 @@ export default {
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
             font-size: 13px;
-            color: #4f94bc;
+            color: $stabblue;
             line-height: 25px;
             padding: 0 10px;
             cursor: pointer;
@@ -53,14 +54,14 @@ export default {
             &.active{
                 line-height: 29px;
                 font-size: 14px;
-                color: #ffffff;
-                background: #214b6b;
-                text-shadow: -1px -1px rgba( 0, 0, 0, 0.25 );
+                color: $white;
+                background: $activeStabgreen;
+                text-shadow: -1px -1px $blackithOp;
                 cursor: default;
                 box-shadow: none;
             }
             &:hover{
-                color: #ffffff;
+                color: $white;
             }
         }
     }

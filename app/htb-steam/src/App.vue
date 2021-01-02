@@ -19,6 +19,7 @@ export default {
 <style lang="scss">
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';
+@import './global/variables.scss';
 
 body{
  font-family: Arial, Helvetica, sans-serif;
@@ -34,7 +35,7 @@ a{
 .Hwrapper{
     width: 100%;
     height: 100%;
-    background: #1b2838;
+    background: $mainBcolor;
     min-height: 100vh;
 }
 .Hcontainer{

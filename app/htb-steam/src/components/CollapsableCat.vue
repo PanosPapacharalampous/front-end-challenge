@@ -23,13 +23,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../global/variables.scss';
+
 .wrapperButton{
   margin-top: 20px;
 }
 .m-1{
   margin-bottom: 0;
-  background-color: rgba(0,0,0,0.2);
-  color: #c6d4dfff;
+  background-color: $bgColDb;
+  color:$whiten;
   font-size: 15px;
   padding: 10px 18px;
   border: none;
@@ -67,8 +69,8 @@ export default {
 }
 #collapse-3{
     .card{
-      background: linear-gradient(to right,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.5) 100%);
-      color:#67c1f5;
+      background: $cardGradient;
+      color:$lblue;
       border-radius: 0;
       border: none;
       .card-body{

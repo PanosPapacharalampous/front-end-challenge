@@ -78,12 +78,14 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../global/variables.scss';
+
 input{
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: rgba( 0, 0, 0, 0.2 );
-  color: white;
+  background-color: $backgroundB;
+  color: $white;
   border: none;
   &:focus{
     outline: none;

@@ -48,131 +48,134 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../global/variables.scss';
+
 .tab_content_ctn_parent{
   .linksWrapper{
     display: none;
     &.active{
       display: block;
     }
-     .tab_item{
-        position: relative;
-        display: block;
-        background: #202d39;
-        background: rgba( 0, 0, 0, 0.2 );
+    .tab_item{
+      position: relative;
+      display: block;
+      background: $bblue;
+      background:$backgroundB;
+      height: 69px;
+      margin-bottom: 5px;
+      padding-left: 198px;
+      text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+
+      .tab_item_cap{
+        width: 184px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        line-height: 69px;
+        transition: opacity 0.25s;
         height: 69px;
-        margin-bottom: 5px;
-        padding-left: 198px;
-        text-size-adjust: none;
-        -webkit-text-size-adjust: none;
+        overflow: hidden;
 
-        .tab_item_cap{
-          width: 184px;
-          position: absolute;
-          left: 0;
-          top: 0;
-          z-index: 3;
-          line-height: 69px;
-          transition: opacity 0.25s;
-          height: 69px;
-          overflow: hidden;
-
-          img{
-            vertical-align: middle;
-            border-style: none;
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-          }
+        img{
+          vertical-align: middle;
+          border-style: none;
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
         }
-        &:hover{
-          background:rgba( 0, 0, 0, 0.4 );
-        }
+      }
+      &:hover{
+        background:$hoverblack;
+      }
     }
     .tab_item_discount{
+      display: block;
+      float: right;
+      margin-right: 16px;
+      background: none;
+      margin-top: 23px;
+      width: 120px;
+      text-align: right;
+      .discount_pct{
         display: block;
-        float: right;
-        margin-right: 16px;
-        background: none;
-        margin-top: 23px;
-        width: 120px;
+        float: left;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0 4px;
+        margin-top: 8px;
+        border-radius: 1px;
+        color: $lgreen;
+        background: $green;
+      }
+      .discount_prices{
+        background: transparent;
+        display: inline-block;
+        vertical-align: bottom;
         text-align: right;
-        .discount_pct{
-            display: block;
-            float: left;
-            font-size: 14px;
-            line-height: 18px;
-            padding: 0 4px;
-            margin-top: 8px;
-            border-radius: 1px;
-            color: #a4d007;
-            background: #4c6b22;
-        }
-        .discount_prices{
-            background: transparent;
-            display: inline-block;
-            vertical-align: bottom;
-            text-align: right;
 
-            .discount_original_price{
-                text-decoration: line-through;
-                color: #626366;
-                font-size: 11px;
-                font-family: Tahoma, Arial, Helvetica, sans-serif;
-            }
-            .discount_final_price{
-                color: #9099a1;
-                font-size: 13px;
-                font-family: Tahoma, Arial, Helvetica, sans-serif;
-            }
+        .discount_original_price{
+            text-decoration: line-through;
+            color: $dgray;
+            font-size: 11px;
+            font-family: Tahoma, Arial, Helvetica, sans-serif;
         }
+        .discount_final_price{
+            color: $mgray;
+            font-size: 13px;
+            font-family: Tahoma, Arial, Helvetica, sans-serif;
+        }
+      }
     }
     .tab_item_content{
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        padding-top: 6px;
-        font-size: 12px;
-        .tab_item_name{
-            color: #c7d5e0;
-            font-size: 1.25em;
-            line-height: 18px;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            display: block;
-            overflow: hidden;
-            transition: color 0.25s;
-        }
-        .tab_item_details{
-            color: #384959;
-            line-height: 20px;
-            .platform_img{
-                vertical-align: bottom;
-                opacity: 0.3;
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background-repeat: no-repeat;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-top: 6px;
+      font-size: 12px;
+      .tab_item_name{
+          color: $grwhite;
+          font-size: 1.25em;
+          line-height: 18px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: block;
+          overflow: hidden;
+          transition: color 0.25s;
+      }
+      .tab_item_details{
+        color: $graydblue;
+        line-height: 20px;
+        .platform_img{
+            vertical-align: bottom;
+            opacity: 0.3;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
 
-                &.win{
-                    background-image: url('../assets/icon_platform_win.png');
-                }
-                &.mac{
-                    background-image: url('../assets/icon_platform_mac.png');
-                }
-                &.linux{
-                    background-image: url('../assets/icon_platform_linux.png');
-                }
+            &.win{
+                background-image: url('../assets/icon_platform_win.png');
             }
-            .tab_item_top_tags{
-                height: 20px;
-                white-space: normal;
-                overflow: hidden;
-                .top_tag{
-                    white-space: nowrap;
-                    font-size: 12px;
-                }
+            &.mac{
+                background-image: url('../assets/icon_platform_mac.png');
+            }
+            &.linux{
+                background-image: url('../assets/icon_platform_linux.png');
             }
         }
+        .tab_item_top_tags{
+          height: 20px;
+          white-space: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          .top_tag{
+              white-space: nowrap;
+              font-size: 12px;
+          }
+        }
+      }
     }
   }
 }

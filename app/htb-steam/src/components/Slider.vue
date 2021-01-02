@@ -67,6 +67,8 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../global/variables.scss';
+
   .thumb-example{
     display: block;
     width: 100%;

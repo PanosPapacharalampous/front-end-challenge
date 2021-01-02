@@ -36,8 +36,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../global/variables.scss';
+
 .tabbar_ctn{
-  box-shadow: 0 5px 0 -1px #214b6b;
+  box-shadow: 0 5px 0 -1px $activeStabgreen;
   margin-bottom: 9px;
   .store_horizontal_minislider_ctn{
       height: 30px !important;

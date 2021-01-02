@@ -60,6 +60,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../global/variables.scss';
+
 .game_header_image_ctn{
   margin-bottom: 7px;
   height: auto;
@@ -78,17 +80,17 @@ export default {
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
-  color: #c6d4df;
+  color: $newwhite;
 }
 .user_reviews{
   font-size: 12px;
-  color: #c6d4df;
+  color: $newwhite;
   margin-top: 10px;
   .release_date{
     display: flex;
     line-height: 16px;
     .date{
-      color: #8f98a0;
+      color: $lgray;
     }
   }
   .subtitle{
@@ -108,12 +110,12 @@ export default {
     line-height: 16px;
     .summary{
       span{
-        color:#8f98a0;
+        color:$lgray;
       }
       a{
-        color: #67c1f5;
+        color: $lblue;
         &:hover{
-          color: white;
+          color: $white;
         }
       }
     }

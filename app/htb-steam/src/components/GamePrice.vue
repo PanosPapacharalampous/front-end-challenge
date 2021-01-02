@@ -59,18 +59,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../global/variables.scss';
+
 .game_area_purchase_game_wrapper{
   margin-bottom: 28px;
   .game_area_purchase_game{
     margin-bottom: 0px;
     position: relative;
-    background: -webkit-linear-gradient( 150deg, rgba(226,244,255,0.3) 5%,rgba(84, 107, 115, 0.3) 95%);
-    background: linear-gradient( -60deg, rgba(226,244,255,0.3) 5%,rgba(84, 107, 115, 0.3) 95%);
+    background: $gamePurchase;
     border-radius: 4px;
     font-family: "Motiva Sans", Sans-serif;
     font-weight: normal;
     font-size: 13px;
-    color: #c6d4df;
+    color: $newwhite;
     padding: 16px;
     padding-bottom: 26px;
     z-index: 1;
@@ -78,13 +79,13 @@ export default {
       font-size: 21px;
       font-family: "Motiva Sans", Sans-serif;
       font-weight: normal;
-      color: #ffffff;
+      color: $white;
       font-weight: normal;
       margin-bottom: 2px;
     }
     .game_purchase_discount_countdown{
       margin-bottom: 8px;
-      color: #7cb8e4;
+      color: $skyblue;
     }
     .game_area_purchase_platform{
       float: right;
@@ -119,7 +120,7 @@ export default {
         vertical-align: bottom;
         display: flex;
         align-items: center;
-        background-color: #000000;
+        background-color: $black;
         padding: 2px 2px 2px 0px;
         border-radius: 2px;
         -moz-border-radius: 2px;
@@ -145,15 +146,15 @@ export default {
             text-align: center;
             overflow: hidden;
             padding: 0 6px;
-            color: #a4d007;
-            background: #4c6b22;
+            color: $lgreen;
+            background: $green;
           }
           .discount_prices{
             display: inline-block;
             position: relative;
             vertical-align: top;
             text-align: right;
-            background: #000000;
+            background: $black;
             .discount_original_price{
               position: absolute;
               left: auto;
@@ -161,7 +162,7 @@ export default {
               top: 0px;
               font-size: 11px;
               text-decoration: line-through;
-              color: #626366;
+              color: $dgray;
               font-family: Tahoma, Arial, Helvetica, sans-serif;
             }
             .discount_final_price{
@@ -169,7 +170,7 @@ export default {
               padding-top: 12px;
               padding-right: 6px;
               font-size: 14px;
-              color: #acdbf5;
+              color: $skblue2;
               &.nopadds{
                 padding-top: 7px;
               }
@@ -196,28 +197,26 @@ export default {
             display: inline-block;
             cursor: pointer;
             text-decoration: none !important;
-            color: #d2efa9;
+            color: $gwhite;
             background: transparent;
-            text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.3 );
+            text-shadow: 1px 1px 0px $lightBlueBack;
             &:hover{
               text-decoration: none !important;
-              color: #fff;
+              color: $white;
               background: transparent;
               span{
-                background: #8ed629;
-                background: -webkit-linear-gradient( top, #8ed629 5%, #6aa621 95%);
-                background: linear-gradient( to bottom, #8ed629 5%, #6aa621 95%);
-                background: linear-gradient( to right, #8ed629 5%, #6aa621 95%);
+                background: $lgreen2;
+                background: $greeNlinearB;
+                background: $greenLinearR;
               }
             }
 
             span{
               border-radius: 2px;
               display: block;
-              background: #6fa720;
-              background: -webkit-linear-gradient( top, #6fa720 5%, #588a1b 95%);
-              background: linear-gradient( to bottom, #6fa720 5%, #588a1b 95%);
-              background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
+              background: $greenyel;
+              background: $cardlinearB;
+              background: $cardLinearR;
               padding: 0 15px;
               font-size: 15px;
               line-height: 30px;

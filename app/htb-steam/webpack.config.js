@@ -22,6 +22,7 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader',
+          'sass-loader',
           {
             loader:'sass-loader',
             options:{
@@ -38,15 +39,25 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader',
+          'sass-loader',
+          'sass-resources-loader',
           {
             loader: 'sass-loader',
             options: {
               // you can also read from a file, e.g. `variables.scss`
               // use `prependData` here if sass-loader version = 8, or
               // `data` if sass-loader version < 8
-              // additionalData: `$color: red;`
+              // additionalData: `$color: red;`zz
+        
             }
-          }
+          },
+          // {
+          //   loader:'sass-resources-loader',
+          //   options:{
+          //     sourceMap: true,
+          //     resources: require(path.join(process.cwd(), "src/global/_variables.scss")),
+          //   }
+          // }
         ]
       },
       {
@@ -60,7 +71,8 @@ module.exports = {
             'scss': [
               'vue-style-loader',
               'css-loader',
-              'sass-loader'
+              'sass-loader',
+              // 'sass-resources-loader'
             ],
             'sass': [
               'vue-style-loader',
