@@ -36,7 +36,6 @@
 
 <script>
 export default {
-
   data() {
     return {
       
@@ -47,14 +46,6 @@ export default {
     title:String,
     platforms:Object
   },
-  mounted() {
-
-  },
-  methods:{
-  },
-  components:{
-
-  }
 }
 </script>
 

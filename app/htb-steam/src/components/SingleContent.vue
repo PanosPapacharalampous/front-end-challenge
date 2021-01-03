@@ -25,7 +25,6 @@
         </div>
       </div>
     </router-link>
-    
   </div>
 </template>
 
@@ -52,6 +51,7 @@ export default {
 
 <style lang="scss">
 @import '../global/variables.scss';
+@import '../global/mixins.scss';
 
 .tab_content_ctn_parent{
   .linksWrapper{
@@ -131,14 +131,19 @@ export default {
       padding-left: 15px;
       padding-right: 15px;
       height: auto;
-
+      @include respond-to($medium){
+         width: calc(100%/2);
+      }
+      @include respond-to($xsmall){
+         width: calc(100%/1);
+      }
       .tab_item_cap{
         display: flex;
         position: relative;
         flex-direction: column;
         height: auto;
         width: 100%;
-
+        z-index: 2;
         img{
           border-style: none;
           object-fit: cover;

@@ -61,7 +61,6 @@ import CollapsableCat from './components/CollapsableCat.vue';
 import AboutGame from './components/AboutGame.vue';
 import axios from 'axios';
 
-
 export default {
 
   data() {

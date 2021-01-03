@@ -28,7 +28,6 @@
 
 <script>
 export default {
-
   data() {
     return {
      
@@ -41,9 +40,6 @@ export default {
     devs:Array,
     publishers:Array
   },
-  mounted() {
-    
-  },
   methods:{
     getValWithComma(dev,index){
       if(index === 0){
@@ -52,9 +48,6 @@ export default {
         return `, ${dev}`
       }
     }
-  },
-  components:{
-  
   }
 }
 </script>

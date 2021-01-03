@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 import SingleTab from './SingleTab.vue';
 
 export default {
@@ -42,15 +41,14 @@ export default {
   box-shadow: 0 5px 0 -1px $activeStabgreen;
   margin-bottom: 9px;
   .store_horizontal_minislider_ctn{
-      height: 30px !important;
-      position: relative;
-      overflow: hidden;
-      .tabbar.store_horizontal_minislider{
-          white-space: nowrap;
-          overflow-x: auto;
-          overflow-y: hidden;
-      }
+    height: 30px !important;
+    position: relative;
+    overflow: hidden;
+    .tabbar.store_horizontal_minislider{
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
   }
 }
-
 </style>

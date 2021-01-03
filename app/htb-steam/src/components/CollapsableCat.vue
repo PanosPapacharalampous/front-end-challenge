@@ -68,19 +68,19 @@ export default {
   }
 }
 #collapse-3{
-    .card{
-      background: $cardGradient;
-      color:$lblue;
-      border-radius: 0;
-      border: none;
-      .card-body{
-        font-size: 13px;
-        ul{
-          padding-left: 0;
-          list-style: none;
-          margin-bottom: 0;
-        }
+  .card{
+    background: $cardGradient;
+    color:$lblue;
+    border-radius: 0;
+    border: none;
+    .card-body{
+      font-size: 13px;
+      ul{
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 0;
       }
     }
   }
+}
 </style>
